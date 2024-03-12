@@ -106,6 +106,8 @@ const ConversationPage = () => {
 					)}
 					<div className="flex flex-col-reverse gap-y-4">
 						{messages.map((message, idx) => {
+							console.log(message);
+
 							return (
 								<div
 									key={idx}
@@ -117,8 +119,7 @@ const ConversationPage = () => {
 									)}
 								>
 									{message.role === "user" ? <UserAvatar /> : <BotAvatar />}
-												{/*  ignore typescript error  */}
-									<p className="text-sm">{message.content}</p>
+									<p className="text-sm">{message.content?.toString()}</p>
 								</div>
 							);
 						})}
